@@ -6,5 +6,5 @@ DB = SQLAlchemy()
 class Pokemon(DB.Model):
     # Create table schema
     id = DB.Column(DB.BigInteger, primary_key=True, nullable=False)
-    poke_name = DB.Column(DB.String, nullable=False)
-    
+    name = DB.Column(DB.String, nullable=False)
+    ability = DB.Column(DB.String, nullable=False)

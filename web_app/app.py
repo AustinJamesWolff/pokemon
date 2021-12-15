@@ -1,6 +1,7 @@
 from flask import Flask, render_template 
-from .models import DB
+from .models import DB, Pokemon
 from .pokeapi import get_pokemon
+import pprint
 
 def create_app():
 
@@ -20,5 +21,17 @@ def create_app():
         return """<p>This is an example of getting Pikachu: 
          <br>testing multi lines
          <br>break.<p>"""
+
+    @app.route("/pikachu")
+    def pika():
+        poke_name = 'pikachu'
+        pokemon_data = get_pokemon(poke_name)['id']
+        return str(pokemon_data)
+
+    @app.route("/test")
+    def test():
+        poke_name = 'pikachu'
+        pokemon_data = get_pokemon(poke_name)
+        return pokemon_data
 
     return app
