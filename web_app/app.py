@@ -34,4 +34,12 @@ def create_app():
         pokemon_data = get_pokemon(poke_name)
         return pokemon_data
 
+    # Usr the below to show the picture of the pokemon!
+    @app.route("/<name>", methods=['GET'])
+    def pic(name=None):
+        name = name
+        pokemon_data = get_pokemon(name)['sprites']['front_default']
+        return '<img src=pokemon_data>'
+
+
     return app

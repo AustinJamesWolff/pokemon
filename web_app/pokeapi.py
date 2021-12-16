@@ -3,6 +3,8 @@ import ast
 import json
 from .models import DB, Pokemon
 
+# Read more about the API here: https://pokeapi.co/docs/v2#pokemon
+
 def get_pokemon(pokemon_name):
 
     POKE_API_URL = "https://pokeapi.co/api/v2/pokemon/"
